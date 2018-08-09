@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Animated, TouchableWithoutFeedback } from 'react-native';
 import { Router, Scene } from 'react-native-router-flux';
 
 import Home from './Home';
-import Animation1 from './Animation1';
-import Animation2 from './Animation2';
-import Animation3 from './Animation3';
+import AnimatedValue from './components/AnimatedValue';
+import Easing from './components/Easing';
+import ValueXY from './components/ValueXY';
+import Parallel from './components/Parallel';
+import Loop from './components/Loop';
+import Interpolate from './components/Interpolate';
+import Extrapolate from './components/Extrapolate';
+import Practice from './components/Practice';
 
 export default class App extends Component {
 
@@ -20,21 +24,51 @@ export default class App extends Component {
             hideNavBar
           />
           <Scene 
-            key='animation1'
-            component={Animation1}
-            title='Animation1'
+            key='AnimatedValue'
+            component={AnimatedValue}
+            title='AnimatedValue'
             hideNavBar
           />
           <Scene 
-            key='animation2'
-            component={Animation2}
-            title='Animation2'
+            key='Easing'
+            component={Easing}
+            title='Easing'
             hideNavBar
           />
           <Scene 
-            key='animation3'
-            component={Animation3}
-            title='Animation3'
+            key='ValueXY'
+            component={ValueXY}
+            title='ValueXY'
+            hideNavBar
+          />
+          <Scene 
+            key='Parallel'
+            component={Parallel}
+            title='Parallel'
+            hideNavBar
+          />
+          <Scene 
+            key='Loop'
+            component={Loop}
+            title='Loop'
+            hideNavBar
+          />
+          <Scene 
+            key='Interpolate'
+            component={Interpolate}
+            title='Interpolate'
+            hideNavBar
+          />
+          <Scene 
+            key='Extrapolate'
+            component={Extrapolate}
+            title='Extrapolate'
+            hideNavBar
+          />
+          <Scene 
+            key='Practice'
+            component={Practice}
+            title='Practice'
             hideNavBar
           />
         </Scene>
@@ -42,11 +76,3 @@ export default class App extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

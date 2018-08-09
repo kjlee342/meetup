@@ -9,23 +9,58 @@ export default class Home extends Component {
         <View style={styles.container}>
             <TouchableOpacity 
               style={styles.button} 
-              onPress={() => Actions.animation1()}
+              onPress={() => Actions.AnimatedValue()}
             >
-                <Text style={styles.buttonText}>One</Text>
+                <Text style={styles.buttonText}>Animated.Value</Text>
             </TouchableOpacity>
 
-             <TouchableOpacity 
+            <TouchableOpacity 
               style={styles.button} 
-              onPress={() => Actions.animation2()}
+              onPress={() => Actions.Easing()}
             >
-                <Text style={styles.buttonText}>Two</Text>
+                <Text style={styles.buttonText}>Easing</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity 
+              style={styles.button} 
+              onPress={() => Actions.ValueXY()}
+            >
+                <Text style={styles.buttonText}>ValueXY</Text>
             </TouchableOpacity>
 
-             <TouchableOpacity 
+            <TouchableOpacity 
               style={styles.button} 
-              onPress={() => Actions.animation3()}
+              onPress={() => Actions.Parallel()}
             >
-                <Text style={styles.buttonText}>Three</Text>
+                <Text style={styles.buttonText}>Parallel</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+              style={styles.button} 
+              onPress={() => Actions.Loop()}
+            >
+                <Text style={styles.buttonText}>Loop</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+              style={styles.button} 
+              onPress={() => Actions.Interpolate()}
+            >
+                <Text style={styles.buttonText}>Interpolate</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+              style={styles.button} 
+              onPress={() => Actions.Extrapolate()}
+            >
+                <Text style={styles.buttonText}>Extrapolate</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+              style={styles.button} 
+              onPress={() => Actions.Practice()}
+            >
+                <Text style={styles.buttonText}>Practice</Text>
             </TouchableOpacity>
         </View>
     );

@@ -10,9 +10,9 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import { Actions } from './node_modules/react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 
-import Background from "./imgs/drink1.jpg";
+import Background from "../imgs/drink1.jpg";
 
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 

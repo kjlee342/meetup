@@ -7,41 +7,43 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import { Actions } from './node_modules/react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 
-export default class Animation2 extends Component {
+export default class ExtrapolateEx extends Component {
   state = {
     animation: new Animated.Value(0),
   };
 
-  startAnimation = () => {
-    Animated.timing(this.state.animation, {
-      toValue: 360,
-      duration: 1500,
-    }).start(() => {
-      this.state.animation.setValue(0)
-    })
-  };
+  toggleAnimation = () => {
+    const toValue = this._loop ? 0 : 1;
+
+    Animated.loop(Animated.timing(this.state.animation, {
+        toValue,
+        duration: 2000,
+    })).start();
+
+    this._loop = !this._loop;
+};
 
   render() {
     const rotateInterpolate = this.state.animation.interpolate({
-      inputRange: [0, 360],
+      inputRange: [0, 1],
       outputRange: ['0deg', '360deg'],
     });
 
     const colorInterpolate = this.state.animation.interpolate({
-      inputRange: [0, 180, 360],
-      outputRange: ['rgb(255, 99, 71)', 'rgb(135, 206, 235)','rgb(255, 99, 71)']
+      inputRange: [0, .5, 1],
+      outputRange: ['rgb(255, 99, 71)', 'rgb(255, 255, 71)','rgb(255, 99, 255)']
     });
 
     const sizeInterpolate = this.state.animation.interpolate({
-      inputRange: [0, 180, 360],
-      outputRange: ['50%', '25%', '50%']
+      inputRange: [0, .5, 1],
+      outputRange: ['50%', '5%', '50%']
     });
 
     const opacityInterpolate = this.state.animation.interpolate({
       inputRange: [0, .1],
-      outputRange: [1, 0.8],
+      outputRange: [1, 0.9],
       extrapolate: 'clamp'
     });
 
@@ -60,13 +62,13 @@ export default class Animation2 extends Component {
     
     return (
       <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={this.startAnimation}>
+        <TouchableWithoutFeedback onPress={this.toggleAnimation}>
           <Animated.View style={[styles.circle, shapeStyle]}>
             <Animated.View style={[styles.diamond, shapeStyle, diaStyle]} />
           </Animated.View>
         </TouchableWithoutFeedback>
         
-        <View style={styles.back}>
+        <View style={styles.backButton}>
           <TouchableOpacity onPress={() => {Actions.pop()}}>
             <Text style={{fontSize: 30}}>&lt;</Text>
           </TouchableOpacity>
@@ -92,7 +94,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     backgroundColor: 'skyblue'
   },
-  back: {
+  backButton: {
     position: 'absolute',
     left: 15,
     top: 30,
