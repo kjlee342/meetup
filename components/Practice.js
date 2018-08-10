@@ -80,7 +80,7 @@ export default class Animation3 extends Component {
 
     const loginWrapbgColorInterpolate = this.state.animation.interpolate({
       inputRange: [1, 2],
-      outputRange: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, .3)'],
+      outputRange: ['rgba(139, 219, 219, 0)', 'rgba(255, 255, 255, .5)'],
     });
 
     const loginWrapTranslateYInterpolate = this.state.animation.interpolate({
@@ -135,11 +135,11 @@ export default class Animation3 extends Component {
                 secureTextEntry
               />
 
-              <TouchableWithoutFeedback>
+              <TouchableOpacity>
                 <Animated.View style={[styles.button, buttonStyle]}>
                   <Text style={styles.buttonText}>Login</Text>
                 </Animated.View>
-              </TouchableWithoutFeedback>
+              </TouchableOpacity>
 
             </KeyboardAvoidingView>
           </Animated.View>
@@ -149,7 +149,7 @@ export default class Animation3 extends Component {
 
         <View style={styles.back}>
           <TouchableOpacity onPress={() => {Actions.pop()}}>
-            <Text style={{fontSize: 30, color: 'white'}}>&lt;</Text>
+            <Text style={{fontSize: 30, color: '#468EFF'}}>&lt;</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -172,33 +172,35 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     justifyContent: 'flex-end',
-    paddingBottom: 90,
+    paddingBottom: 30,
   },
   loginWrap: {
     width: '100%',
     height: '30%',
-    backgroundColor: 'black',
   },
   loginView: {
     alignItems: 'center',
   },
   title: {
-    color: 'white',
+    color: '#2063B0',
     fontSize: 30,
     paddingTop: 10,
     paddingBottom: 10,
   },
   button:{
     marginTop: 13,
-    backgroundColor: "skyblue",
+    backgroundColor: "white",
     borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#8BDBDB',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 7,
-    width: '40%',
+    paddingRight: 45,
+    paddingLeft: 45,
   },
   buttonText:{
-    color: 'white',
+    color: '#2063B0',
     fontSize: 20,
   },
   textInput: {
@@ -208,6 +210,8 @@ const styles = StyleSheet.create({
     color: 'black',
     padding: 8,
     width: '60%',
+    borderWidth: 1,
+    borderColor: '#8BDBDB',
   },
   back: {
     position: 'absolute',
