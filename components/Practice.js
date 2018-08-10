@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-import Background from "../imgs/drink1.jpg";
+import Background from "../imgs/drink.jpg";
 
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 

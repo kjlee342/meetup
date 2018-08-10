@@ -15,7 +15,7 @@ export default class ExtrapolateEx extends Component {
   };
 
   toggleAnimation = () => {
-    const toValue = this._loop ? 0 : 1;
+    const toValue = this._loop ? 0 : 2;
 
     Animated.loop(Animated.timing(this.state.animation, {
         toValue,
@@ -29,22 +29,26 @@ export default class ExtrapolateEx extends Component {
     const rotateInterpolate = this.state.animation.interpolate({
       inputRange: [0, 1],
       outputRange: ['0deg', '360deg'],
+      extrapolate: 'extend',
     });
 
     const colorInterpolate = this.state.animation.interpolate({
       inputRange: [0, .5, 1],
-      outputRange: ['rgb(255, 99, 71)', 'rgb(255, 255, 71)','rgb(255, 99, 255)']
+      outputRange: ['rgb(255, 99, 71)', 'rgb(255, 255, 71)','rgb(255, 99, 255)'],
+      extrapolateRight: 'clamp',
     });
 
     const sizeInterpolate = this.state.animation.interpolate({
       inputRange: [0, .5, 1],
-      outputRange: ['50%', '5%', '50%']
+      outputRange: ['50%', '5%', '50%'],
+      extrapolateLeft: 'clamp',
+      extrapolateRight: 'clamp',
     });
 
     const opacityInterpolate = this.state.animation.interpolate({
-      inputRange: [0, .1],
-      outputRange: [1, 0.9],
-      extrapolate: 'clamp'
+      inputRange: [0, 1],
+      outputRange: [1, 0.5],
+      extrapolate: 'identity',
     });
 
     const shapeStyle = {
