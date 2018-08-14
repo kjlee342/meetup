@@ -123,7 +123,7 @@ export default class Animation3 extends Component {
           <Animated.View style={[styles.loginWrap, loginWrapStyles]}>
             <KeyboardAvoidingView style={styles.loginView} behavior="padding">
 
-              <Animated.Text style={[styles.title, titleStyle]}>React Native</Animated.Text>
+              <Animated.Text style={[styles.title, titleStyle]}>React Native Seoul</Animated.Text>
               
               <AnimatedTextInput
                 style={[styles.textInput, emailStyle]}
@@ -184,8 +184,7 @@ const styles = StyleSheet.create({
   title: {
     color: '#2063B0',
     fontSize: 30,
-    paddingTop: 10,
-    paddingBottom: 10,
+    marginTop: 20,
   },
   button:{
     marginTop: 13,
