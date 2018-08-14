@@ -38,10 +38,7 @@ export default class Parallel extends Component {
 
   render() {
     const ballStyle = {
-      transform: [
-        { translateY: this.state.ball.y },
-        { translateX: this.state.ball.x }
-      ]
+      transform: this.state.ball.getTranslateTransform()
     };
 
     return (

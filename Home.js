@@ -11,7 +11,14 @@ export default class Home extends Component {
               style={styles.button} 
               onPress={() => Actions.AnimatedValue()}
             >
-                <Text style={styles.buttonText}>Animated.Value</Text>
+                <Text style={styles.buttonText}>Animated Value</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+              style={styles.button} 
+              onPress={() => Actions.ConfigureAnimations()}
+            >
+                <Text style={styles.buttonText}>Configure Animations</Text>
             </TouchableOpacity>
 
             <TouchableOpacity 
@@ -25,7 +32,7 @@ export default class Home extends Component {
               style={styles.button} 
               onPress={() => Actions.ValueXY()}
             >
-                <Text style={styles.buttonText}>ValueXY</Text>
+                <Text style={styles.buttonText}>Value XY</Text>
             </TouchableOpacity>
 
             <TouchableOpacity 
@@ -33,13 +40,6 @@ export default class Home extends Component {
               onPress={() => Actions.Parallel()}
             >
                 <Text style={styles.buttonText}>Parallel</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-              style={styles.button} 
-              onPress={() => Actions.Loop()}
-            >
-                <Text style={styles.buttonText}>Loop</Text>
             </TouchableOpacity>
 
             <TouchableOpacity 

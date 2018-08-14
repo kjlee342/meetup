@@ -3,10 +3,10 @@ import { Router, Scene } from 'react-native-router-flux';
 
 import Home from './Home';
 import AnimatedValue from './components/AnimatedValue';
+import ConfigureAnimations from './components/ConfigureAnimations';
 import Easing from './components/Easing';
 import ValueXY from './components/ValueXY';
 import Parallel from './components/Parallel';
-import Loop from './components/Loop';
 import Interpolate from './components/Interpolate';
 import Extrapolate from './components/Extrapolate';
 import Practice from './components/Practice';
@@ -30,6 +30,12 @@ export default class App extends Component {
             hideNavBar
           />
           <Scene 
+            key='ConfigureAnimations'
+            component={ConfigureAnimations}
+            title='ConfigureAnimations'
+            hideNavBar
+          />
+          <Scene 
             key='Easing'
             component={Easing}
             title='Easing'
@@ -45,12 +51,6 @@ export default class App extends Component {
             key='Parallel'
             component={Parallel}
             title='Parallel'
-            hideNavBar
-          />
-          <Scene 
-            key='Loop'
-            component={Loop}
-            title='Loop'
             hideNavBar
           />
           <Scene 
