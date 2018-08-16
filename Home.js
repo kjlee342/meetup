@@ -58,9 +58,9 @@ export default class Home extends Component {
 
             <TouchableOpacity 
               style={styles.button} 
-              onPress={() => Actions.Practice()}
+              onPress={() => Actions.Exercise()}
             >
-                <Text style={styles.buttonText}>Practice</Text>
+                <Text style={styles.buttonText}>Exercise</Text>
             </TouchableOpacity>
         </View>
     );

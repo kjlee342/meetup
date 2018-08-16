@@ -9,7 +9,7 @@ import ValueXY from './components/ValueXY';
 import Parallel from './components/Parallel';
 import Interpolate from './components/Interpolate';
 import Extrapolate from './components/Extrapolate';
-import Practice from './components/Practice';
+import Exercise from './components/Exercise';
 
 export default class App extends Component {
 
@@ -66,9 +66,9 @@ export default class App extends Component {
             hideNavBar
           />
           <Scene 
-            key='Practice'
-            component={Practice}
-            title='Practice'
+            key='Exercise'
+            component={Exercise}
+            title='Exercise'
             hideNavBar
           />
         </Scene>
