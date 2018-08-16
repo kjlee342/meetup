@@ -15,6 +15,7 @@ import { Actions } from 'react-native-router-flux';
 import Background from "../imgs/drink.jpg";
 
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
+const AnimatedKeyboardAvoidingView = Animated.createAnimatedComponent(KeyboardAvoidingView);
 
 const createAnimationStyle = (animation) => {
   const translateY = animation.interpolate({
@@ -120,9 +121,12 @@ export default class Animation3 extends Component {
           style={[styles.box]} 
           source={Background}
         >
-          <Animated.View style={[styles.loginWrap, loginWrapStyles]}>
-            <KeyboardAvoidingView style={styles.loginView} behavior="padding">
-
+          <AnimatedKeyboardAvoidingView 
+            style={[styles.loginWrap, loginWrapStyles]} 
+            behavior="position" 
+            enabled
+          >
+            <View style={styles.loginView}>
               <Animated.Text style={[styles.title, titleStyle]}>React Native Seoul</Animated.Text>
               
               <AnimatedTextInput
@@ -140,10 +144,8 @@ export default class Animation3 extends Component {
                   <Text style={styles.buttonText}>Login</Text>
                 </Animated.View>
               </TouchableOpacity>
-
-            </KeyboardAvoidingView>
-          </Animated.View>
-
+            </View>
+          </AnimatedKeyboardAvoidingView>
         </ImageBackground>
         <Animated.View style={[styles.cover, coverStyles]}/>
 
@@ -177,14 +179,17 @@ const styles = StyleSheet.create({
   loginWrap: {
     width: '100%',
     height: '30%',
+    alignItems: 'center',
   },
   loginView: {
+    flex: 1, 
     alignItems: 'center',
   },
   title: {
     color: '#2063B0',
     fontSize: 30,
     marginTop: 20,
+    backgroundColor: 'rgba(255,255,255,0.4)'
   },
   button:{
     marginTop: 13,
@@ -208,7 +213,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     color: 'black',
     padding: 8,
-    width: '60%',
+    width: '85%',
     borderWidth: 1,
     borderColor: '#8BDBDB',
   },
