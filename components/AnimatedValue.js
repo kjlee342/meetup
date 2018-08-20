@@ -18,6 +18,8 @@ export default class AnimatedValue extends Component {
   };
 
   startAnimation = () => {
+    console.log(height)
+
     this.state.ball.addListener( (value) => {
       console.log(value)
     });

@@ -30,25 +30,27 @@ export default class ExtrapolateEx extends Component {
       inputRange: [0, 1],
       outputRange: ['0deg', '360deg'],
       extrapolate: 'extend',
+      // extrapolate: 'clamp',
+      // extrapolate: 'identity',
     });
 
     const colorInterpolate = this.state.animation.interpolate({
       inputRange: [0, .5, 1],
       outputRange: ['rgb(255, 99, 71)', 'rgb(255, 255, 71)','rgb(255, 99, 255)'],
       extrapolateRight: 'clamp',
+      extrapolateLeft: 'extend',
     });
 
     const sizeInterpolate = this.state.animation.interpolate({
       inputRange: [0, .5, 1],
       outputRange: ['50%', '5%', '50%'],
-      extrapolateLeft: 'clamp',
-      extrapolateRight: 'clamp',
+      extrapolate: 'clamp',
     });
 
     const opacityInterpolate = this.state.animation.interpolate({
       inputRange: [0, 1],
       outputRange: [1, 0.5],
-      extrapolate: 'identity',
+      extrapolate: 'clamp',
     });
 
     const shapeStyle = {
