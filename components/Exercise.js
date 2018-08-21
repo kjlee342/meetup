@@ -3,7 +3,6 @@ import {
   StyleSheet, 
   View, 
   Animated, 
-  TouchableWithoutFeedback, 
   KeyboardAvoidingView,
   ImageBackground, 
   TextInput,
@@ -31,7 +30,7 @@ const createAnimationStyle = (animation) => {
   }
 };
 
-export default class Animation3 extends Component {
+export default class Exercise extends Component {
   state = {
     animation: new Animated.Value(0),
     email: new Animated.Value(0),
@@ -92,7 +91,7 @@ export default class Animation3 extends Component {
 
     const titleOpacityInterpolate = this.state.animation.interpolate({
       inputRange: [1, 2],
-      outputRange: [0, 1,],
+      outputRange: [0, 1],
     });
 
     const coverStyles = {
